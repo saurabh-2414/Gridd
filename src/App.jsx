@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { toggleCell, toggleAll, checkerPattern } from "./pattern"; // import functions
-
+import { toggleCell, toggleAll, checkerPattern } from "./pattern"; 
 const DynamicGrid = () => {
   const [rows, setRows] = useState(20);
   const [cols, setCols] = useState(10);
@@ -8,7 +7,7 @@ const DynamicGrid = () => {
   const [running, setRunning] = useState(false);
   const intervalRef = useRef(null);
 
-  // Initialize grid
+  
   useEffect(() => {
     const newGrid = Array.from({ length: rows }, () =>
       Array.from({ length: cols }, () => 0)
@@ -16,12 +15,12 @@ const DynamicGrid = () => {
     setGrid(newGrid);
   }, [rows, cols]);
 
-  // Run pattern (toggle all)
+
   const runPattern = () => {
-    setGrid((g) => toggleAll(g)); // uses pattern.js
+    setGrid((g) => toggleAll(g)); 
   };
 
-  // Start / Stop loop
+  
   useEffect(() => {
     if (running) {
       intervalRef.current = setInterval(runPattern, 500);
