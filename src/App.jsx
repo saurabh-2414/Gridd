@@ -34,28 +34,13 @@ const DynamicGrid = () => {
   return (
     <div style={{ padding: "20px" }}>
       <div style={{ marginBottom: "10px" }}>
-        <label>
-          Rows: 
-          <input
-            type="number"
-            min="5"
-            value={rows}
-            onChange={(e) => setRows(Number(e.target.value))}
-          />
-        </label>
-        <label style={{ marginLeft: "10px" }}>
-          Columns: 
-          <input
-            type="number"
-            min="5"
-            value={cols}
-            onChange={(e) => setCols(Number(e.target.value))}
-          />
-        </label>
-        <button onClick={() => setRunning(!running)} style={{ marginLeft: "10px", fontSize: "12px" }}>
+        <button onClick={() => setRunning(!running)} style={{ marginLeft: "10px",
+           fontSize: "12px", backgroundColor: "rgba(81, 232, 58, 1)", border: "none",color: "black"}}>
           {running ? "Stop" : "Start"}
         </button>
-        <button onClick={() => setGrid(checkerPattern(rows, cols))} style={{ marginLeft: "10px", fontSize: "12px" }}>
+        <button onClick={() => setGrid(checkerPattern(rows, cols))} style={{ marginLeft: "10px",
+           fontSize: "12px",backgroundColor: "#416bf6ff", border: "none" }}>
+         
           Checkerboard
         </button>
       </div>
